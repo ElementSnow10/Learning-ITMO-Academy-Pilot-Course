@@ -15,7 +15,7 @@ std::pair<int, unsigned long long> find_songs_to_listen(const std::vector<int> &
     if (threshold == 0) {
         return {0, times * songs_size};
     }
-    unsigned long long current_cnt = 0, current_sum = 0, best_cnt = -1;
+    unsigned long long current_cnt = 0, current_sum = 0, best_cnt = LLONG_MAX;  // since we are trying to minimize best_cnt.
     int best_start = 0;
     for (int current_start = 0; current_start < songs_size; ++current_start) {
         while (current_sum > threshold) {
